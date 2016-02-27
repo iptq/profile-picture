@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Profile Picture Generator</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+		<style>
+			html, body {
+				margin: 0;
+			}
+			* {
+				font-family: "Roboto", sans-serif;
+			}
+			.page {
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.header {
+				margin: 0;
+				width: 100%;
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+				background-color: #ecf0f1;
+			}
+			.content {
+				width: 100%;
+				height: calc(100% - 100px);
+				padding: 0;
+				position: relative;
+			}
+			#step1 .content table {
+				table-layout: fixed;
+			}
+			#step1 .content table td {
+				background-color: #000;
+				color: #FFF;
+				text-align: center;
+				text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+				cursor: pointer;
+			}
+			#step2 .panel {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%);
+			}
+			#step2 #canvas {
+				box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+				width: 420px;
+				height: 420px;
+				padding: 0;
+				margin-top: 6.9px;
+				margin-bottom: 69px;
+			}
+			#step2 #canvas canvas {
+				width: 420px;
+				height: 420px;
+			}
+			#step2 #textbox {
+				text-align: center;
+			}
+			#step2 #textbox input[type=text] {
+				border: 1px solid #999;
+				outline: 0;
+				font-size: 3em;
+				padding: 0.5em;
+				width: 133.7px;
+				text-align: center;
+			}
+		</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" integrity="sha384-fj9YEHKNa/e0CNquG4NcocjoyMATYo1k2Ff5wGB42C/9AwOlJjDoySPtNJalccfI" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div id="step1" class="page" style="z-index: 50;">
+			<h1 class="header">STEP 1: PICK YOUR COLOR</h1>
+			<div class="content">
+				<table style="width: 100%; height: 100%;" cellpadding=0 cellspacing=0>
+					
+						
+						
+							<tr>
+						
+						<td style="background: #1abc9c" onclick="javascript:select_color('#1abc9c');">
+							1abc9c
+						</td>
+						
+					
+						
+						
+						<td style="background: #2ecc71" onclick="javascript:select_color('#2ecc71');">
+							2ecc71
+						</td>
+						
+					
+						
+						
+						<td style="background: #3498db" onclick="javascript:select_color('#3498db');">
+							3498db
+						</td>
+						
+					
+						
+						
+						<td style="background: #9b59b6" onclick="javascript:select_color('#9b59b6');">
+							9b59b6
+						</td>
+						
+					
+						
+						
+						<td style="background: #34495e" onclick="javascript:select_color('#34495e');">
+							34495e
+						</td>
+						
+							</tr>
+						
+					
+						
+						
+							<tr>
+						
+						<td style="background: #16a085" onclick="javascript:select_color('#16a085');">
+							16a085
+						</td>
+						
+					
+						
+						
+						<td style="background: #27ae60" onclick="javascript:select_color('#27ae60');">
+							27ae60
+						</td>
+						
+					
+						
+						
+						<td style="background: #2980b9" onclick="javascript:select_color('#2980b9');">
+							2980b9
+						</td>
+						
+					
+						
+						
+						<td style="background: #8e44ad" onclick="javascript:select_color('#8e44ad');">
+							8e44ad
+						</td>
+						
+					
+						
+						
+						<td style="background: #2c3e50" onclick="javascript:select_color('#2c3e50');">
+							2c3e50
+						</td>
+						
+							</tr>
+						
+					
+						
+						
+							<tr>
+						
+						<td style="background: #f1c40f" onclick="javascript:select_color('#f1c40f');">
+							f1c40f
+						</td>
+						
+					
+						
+						
+						<td style="background: #e67e22" onclick="javascript:select_color('#e67e22');">
+							e67e22
+						</td>
+						
+					
+						
+						
+						<td style="background: #e74c3c" onclick="javascript:select_color('#e74c3c');">
+							e74c3c
+						</td>
+						
+					
+						
+						
+						<td style="background: #ecf0f1" onclick="javascript:select_color('#ecf0f1');">
+							ecf0f1
+						</td>
+						
+					
+						
+						
+						<td style="background: #95a5a6" onclick="javascript:select_color('#95a5a6');">
+							95a5a6
+						</td>
+						
+							</tr>
+						
+					
+						
+						
+							<tr>
+						
+						<td style="background: #f39c12" onclick="javascript:select_color('#f39c12');">
+							f39c12
+						</td>
+						
+					
+						
+						
+						<td style="background: #d35400" onclick="javascript:select_color('#d35400');">
+							d35400
+						</td>
+						
+					
+						
+						
+						<td style="background: #c0392b" onclick="javascript:select_color('#c0392b');">
+							c0392b
+						</td>
+						
+					
+						
+						
+						<td style="background: #bdc3c7" onclick="javascript:select_color('#bdc3c7');">
+							bdc3c7
+						</td>
+						
+					
+						
+						
+						<td style="background: #7f8c8d" onclick="javascript:select_color('#7f8c8d');">
+							7f8c8d
+						</td>
+						
+							</tr>
+						
+					
+				</table>
+			</div>
+		</div>
+		<div id="step2" class="page" style="z-index: 40;">
+			<h1 class="header">STEP 2: ENTER YOUR INITIALS</h1>
+			<div class="content">
+				<div class="panel">
+					<center><small>Click to download.</small></center>
+					<div id="canvas">
+						<a id="download_link" href="javascript:void(0);" download="picture.png"><canvas id="canvas_canvas" width="420" height="420"></canvas></a>
+					</div>
+					<div id="textbox">
+						<input type="text" maxlength="2" id="initials" placeholder="Mz" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var getTextHeight=function(t){var e=$("<span>Hg</span>").css({fontFamily:t}),i=$('<div style="display: inline-block; width: 1px; height: 0px;"></div>'),s=$("<div></div>");s.append(e,i);var n=$("body");n.append(s);try{var a={};i.css({verticalAlign:"baseline"}),a.ascent=i.offset().top-e.offset().top,i.css({verticalAlign:"bottom"}),a.height=i.offset().top-e.offset().top,a.descent=a.height-a.ascent}finally{s.remove()}return a};
+
+			var bgcolor;
+			var height = 133.7 + 69;
+			var update_picture = function() {
+				var initials_raw = document.getElementById("initials").value.trim().substring(0, 2);
+				var initials = "";
+				if (initials_raw.length > 0) {
+					initials += initials_raw.charAt(0).toUpperCase()
+					if (initials_raw.length > 1) {
+						initials += initials_raw.charAt(1).toLowerCase();
+					}
+				}
+				var canvas = document.getElementById("canvas_canvas");
+				var ctx = canvas.getContext("2d");
+				ctx.fillStyle = bgcolor;
+				ctx.fillRect(0, 0, 420, 420);
+				ctx.font = height + "px Roboto";
+				ctx.textBaseline = "middle";
+				ctx.fillStyle = "#FFF";
+				var size = ctx.measureText(initials);
+				ctx.fillText(initials, 210 - size.width / 2, 210);
+
+				var download_link = canvas.toDataURL("image/png");
+				download_link = download_link.replace(/^data:image\/[^;]/, "data:application/octet-stream");
+				document.getElementById("download_link").href = download_link;
+			};
+			var select_color = function(color) {
+				console.log(color);
+				bgcolor = color;
+				document.getElementById("step1").style.display = "none";
+				document.getElementById("initials").focus();
+				update_picture();
+			};
+			document.getElementById("initials").onkeyup = update_picture;
+		</script>
+	</body>
+</html>
